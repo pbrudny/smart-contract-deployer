@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "compile": "docker run --rm -v $(pwd):/contracts ethereum/solc:stable -o /contracts/build --optimize --bin --abi /contracts/contracts/TestToken.sol\n",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +16,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
